@@ -37,9 +37,9 @@ class Cdisplay:
         self.entities = entities
     
     def print_round(self, round_num: int, alive_count):
-        print(f"Round {round_num}  Population: {alive_count}")
-        print(f"{'ID':<5}|{'PosX':^15}|{'PosY':^15}|{'Points':<6}")
-        print("-"*50)
+        print(f"Round {round_num}  World Population: {alive_count}")
+        print(f"|{'ID':^5}|{'PosX':^15}|{'PosY':^15}|{'Hunger':^10}|{'Species':^10}|")
+        print("-"*61)
         for entity in self.entities:
-            print(f"{entity.get_id():>5}|{round(entity.get_pos()[0],10):>15}|{round(entity.get_pos()[1],10):>15}|{entity.get_points():>6}")
+            print(f"|{entity.get_id():>5}|{round(entity.get_pos()[0],10):>15}|{round(entity.get_pos()[1],10):>15}|{round(entity.get_hunger(),3):>10}|{str(entity):^10}|")
         print()
